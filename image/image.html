@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en-US" style="height: 100%;">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome to gamemory - Image</title>
+  <style>
+    #wrap {
+      min-height: calc(100% - 45px);
+    }
+
+    #category-select {
+      text-align: left;
+      display: inline-block;
+      height: 250px;
+      overflow: scroll;
+      border: 2px solid black;
+      padding: 0px 20px 20px 20px;
+      margin-top: 15px;
+    }
+
+    .enter-button {
+      background-color: rgb(51, 204, 51);
+    }
+
+    .enter-button:active {
+      background-color: rgb(0, 153, 51);
+    }
+
+    .switch-button {
+      background-color: white;
+      border: 2px solid black;
+      padding: 5px 10px;
+    }
+
+    .switch-button:active {
+      background-color: gray;
+    }
+
+    button {
+      font-size: 26px;
+      border-radius: 10px;
+      border: none;
+    }
+
+    button:active {
+      color: black;
+    }
+
+    .start-input {
+      font-size: 20px;
+      vertical-align: middle;
+      height: 25px;
+      width: 70px;
+      border: 2px solid black;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .footer-button {
+      background-color: rgb(51, 204, 51);
+      color: white;
+      font-size: 18px;
+      border-radius: 10px;
+      padding: 5px 10px;
+    }
+
+    .footer-button:active {
+      background-color: rgb(0, 153, 51);
+      color: white;
+    }
+  </style>
+</head>
+
+<body style="font-size: 26px; height: 100%;">
+  <div id="wrap">
+    <div id="input-block" style="text-align: center; padding-top: 30px;">
+      <div style="text-align: left; display: inline-block; padding-right: 30px;">
+        <label>number of images:</label>
+        <br><br>
+        <label>memorization time:</label>
+        <br><br>
+        <label>recall time:</label>
+      </div>
+      <div style="display: inline-block;">
+        <input type="text" id="image-num" class="start-input" value="8">
+        <br><br>
+        <input type="text" id="memorize-time" class="start-input" value="60">
+        <br><br>
+        <input type="text" id="recall-time" class="start-input" value="120">
+      </div>
+      <br>
+      <a href="../index.html"><img src="../home.png" height="50px" width="50px" style="vertical-align: bottom;"></a>
+      <button id="start-button" class="enter-button" onclick="startGame();"
+        style="padding: 10px 32px; margin-top: 25px;">start</button>
+      <br>
+      <div style="margin-top: 20px; text-align: center; display: inline-block;">category:</div>
+      <br>
+      <div id="category-select"></div>
+    </div>
+    <div id="count-block" style="text-align: center; display: none; padding-top: 30px; padding-bottom: 30px">
+      <span id="count-text"></span>
+      <button id="skip-button" class="enter-button" style="padding: 3px 8px;">skip</button>
+    </div>
+    <div id="memorize-block" style="text-align: center; display: none;">
+      <img id="memorize-current-image" style="vertical-align: middle;">
+      <br>
+      <button onclick="firstImage();" class="switch-button">&lt;&lt;</button>
+      <button onclick="prevImage();" class="switch-button">&lt;</button>
+      <div id="memorize-current-image-num" style="width: 60px; display: inline-block;"></div>
+      <button onclick="nextImage();" class="switch-button">&gt;</button>
+      <button onclick="lastImage();" class="switch-button">&gt;&gt;</button>
+      <div>
+        <div id="all-images" style="text-align: left; display: inline-block;"></div>
+      </div>
+    </div>
+    <div id="recall-block" style="display: none;">
+      <div style="text-align: center; flex: 3; display: inline-flexbox;">
+        <div id="select-to" style="text-align: left; display: inline-block;"></div>
+        <br><br>
+        <div id="select-from" style="text-align: left; display: inline-block;"></div>
+      </div>
+      <div style="text-align: left; flex: 1;"><img id="recall-current-image" style="position: fixed;"></div>
+    </div>
+    <div id="result-block" style="text-align: center; display: none; padding-top: 30px">
+      <div style="text-align: center; flex: 3; display: inline-flexbox;">
+        <div id="result-images" style="text-align: left; display: inline-block;"></div>
+      </div>
+      <div style="text-align: left; flex: 1;">
+        <div id="result-information"></div>
+        <button id="retry-button" class="enter-button" onclick="ready();" style="padding: 10px 32px;">retry</button>
+      </div>
+    </div>
+  </div>
+  <footer>
+    images sources: <a href="https://unsplash.com" target="_blank">Unsplash</a>
+    <span style="float: right;">
+      <a href="https://github.com/JasonHu1012/gamemory.git" target="_blank"><button class="footer-button">
+        github repo</button></a>&nbsp;
+      <a href="mailto: jasonhu1012@hotmail.com.tw"><button class="footer-button">contact author</button></a>
+    </span>
+  </footer>
+</body>
+<script src="num.js"></script>
+<script src="image.js"></script>
+
+</html>

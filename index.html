@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-US" style="height: 100%;">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome to gamemory</title>
+  <style>
+    #wrap {
+      min-height: calc(100% - 45px);
+    }
+
+    .footer-button {
+      background-color: rgb(51, 204, 51);
+      color: white;
+      font-size: 18px;
+      border-radius: 10px;
+      border: none;
+      padding: 5px 10px;
+    }
+
+    .footer-button:active {
+      background-color: rgb(0, 153, 51);
+      color: white;
+    }
+
+    .mode-button {
+      height: 180px;
+      width: 400px;
+      font-size: 40px;
+      margin: 40px 10px -10px;
+      border: none;
+      border-radius: 30px;
+    }
+
+    .mode-button:hover {
+      cursor: pointer;
+    }
+
+    .mode-button:active {
+      color: black;
+    }
+  </style>
+</head>
+
+<body style="font-size: 26px; height: 100%;">
+  <div id="wrap" style="text-align: center;">
+    <a href="image/image.html"><button class="mode-button" style="background-color: rgb(255, 153, 51);">Image</button></a>
+    <a href="name/name.html"><button class="mode-button" style="background-color: rgb(0, 153, 255);">Name</button></a>
+  </div>
+  <footer>
+    <span style="float: right;">
+      <a href="https://github.com/JasonHu1012/gamemory.git" target="_blank"><button class="footer-button">
+          github repo</button></a>&nbsp;
+      <a href="mailto: jasonhu1012@hotmail.com.tw"><button class="footer-button">contact author</button></a>
+    </span>
+  </footer>
+</body>
+
+</html>
